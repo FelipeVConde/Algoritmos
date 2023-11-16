@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do produto
+    <input type="text" id="input_produto"><br>
+    Preço de compra
+    <input type="text" id="input_preco"><br>
+    <button onclick="Cadastrar()">
+        Cadastrar
+    </button>
+    <button onclick="Relatar()">
+        Relatorio de estoque
+    </button>
+
+    <div id="div_total_produtos">
+
+    </div><br>
+    <div id="div_relatorio">
+
+    </div><br>
+    <div id="div_produtos_caro_barato">
+
+    </div>
+</body>
+</html>
+
+<script>
+    var ListaProdutos = []
+    var PrecoProdutos = []
+
+    function Cadastrar(){
+        var produto = input_produto.value
+        var preco = input_preco.value
+
+        ListaProdutos.push(produto)
+        PrecoProdutos.push(preco)
+    }
+
+    function Relatar(){
+        var maior = Number(PrecoProdutos[0])
+        var menor = Number(PrecoProdutos[0])
+
+        div_total_produtos.innerHTML =`
+        Total de produtos: ${ListaProdutos.length}
+        `
+        div_relatorio.innerHTML=""
+        for(posicao = 0; posicao < ListaProdutos.length; posicao += 1){
+            div_relatorio.innerHTML +=`
+            Produto ${posicao + 1}: ${ListaProdutos[posicao]}<br>
+            Preço de compra: R$${PrecoProdutos[posicao]}. Vender por ${Number(PrecoProdutos[posicao]) * 1.25}<br>
+            `
+        }
+
+        for(posicao = 0; posicao < PrecoProdutos.length; posicao += 1){
+            if(maior < Number(PrecoProdutos[posicao])){
+                maior = PrecoProdutos[posicao]
+            }
+            if(menor > Number(PrecoProdutos[posicao])){
+                menor = PrecoProdutos[posicao]
+            }
+            div_produtos_caro_barato.innerHTML =`
+            Produto mais caro: ${maior}<br>
+            Produto mais barato: ${menor}<br>
+            `
+        }
+    }
+</script>

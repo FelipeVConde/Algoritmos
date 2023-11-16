@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 8</title>
+</head>
+<body>
+    Nome do guerreiro
+    <input type="text" id="input_guerreiro"><br>
+    Seu ki normal
+    <input type="text" id="input_ki"><br>
+    <button onclick="supersayajin()">
+        Ver ki em cada forma
+    </button>
+</body>
+</html>
+
+<script>
+    function supersayajin(){
+        alert(`O guerreiro ${input_guerreiro.value} na forma Super Sayajin tem ${input_ki.value * 50} de ki`)
+        alert(`O guerreiro ${input_guerreiro.value} na forma Super Sayajin 2 tem ${input_ki.value * 100} de ki`)
+    }
+</script>

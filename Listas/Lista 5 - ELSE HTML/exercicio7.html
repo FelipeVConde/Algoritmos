@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de homens
+    <input type="number" id="input_qtdHomem"><br>
+    Quantidade de mulheres
+    <input type="number" id="input_qtdMulher"><br>
+    <button onclick="LigarElevador()">
+        Ligar elevador
+    </button>
+    <div id="div_peso">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function LigarElevador(){
+        var qtdHomem = input_qtdHomem.value
+        var qtdMulher = input_qtdMulher.value
+        var pesoH = Number(qtdHomem * 90)
+        var pesoM = Number(qtdMulher * 70)
+        var pesoTotal = pesoH + pesoM
+
+        if (pesoTotal > 500){
+            div_peso.innerHTML =`
+            Alguém precisa descer. Precisa perder ${pesoTotal - 500}kg para mover o elevador 
+            `
+        }
+        else {
+            div_peso.innerHTML =`
+            Elevador vai se mover, pois está com ${pesoTotal}kg
+            `
+        }
+    }
+</script>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do passageiro
+    <input type="text" id="input_passageiro"><br>
+    Distância
+    <input type="text" id="input_distancia" placeholder="em KM"><br>
+    Bandeira da corrida
+    <input type="number" id="input_bandeira" min="0" max="4"><br>
+    Horario da corrida
+    <input type="number" id="input_horario" placeholder="em Hr" min="0" max="23"><br>
+
+    <button onclick="calcularCorrida()">
+        Calcular corrida
+    </button><br>
+
+    <div id="div_aviso">
+        
+    </div>
+
+
+</body>
+</html>
+<script>
+    function calcularCorrida(){
+        var NomePassageiro = input_passageiro.value
+        var Distância = input_distancia.value
+        var Bandeira = Number(input_bandeira.value)
+        var horario = input_horario.value
+        var ValorCorrida = Number(Distância) * 1.25
+
+        if (horario <= 23){
+            ValorCorrida = (Bandeira == 1) * 1.15
+            ValorCorrida = (Bandeira == 2) * 1.1
+            div_aviso.innerHTML = `
+                    Olá <b>${NomePassageiro}</b> Sua corrida, será na bandeira ${Bandeira}, percorrerá ${Distância} km e o total da corrida será de ${ValorCorrida}`
+            
+        }
+
+        /*if (Bandeira == 1){
+            if (horario >= 13){
+                ValorCorrida = ValorCorrida * 1.15     
+            }
+            if (horario < 13){
+                ValorCorrida = ValorCorrida * 1.1
+            }
+            if (horario < 7){
+                ValorCorrida = ValorCorrida * 1.05
+            }
+            div_aviso.innerHTML = `
+                    Olá <b>${NomePassageiro}</b> Sua corrida, será na bandeira ${Bandeira}, percorrerá ${Distância} km e o total da corrida será de ${ValorCorrida}`
+        }
+        
+        if (Bandeira == 2){
+            if (horario >= 13){
+                ValorCorrida = ValorCorrida * 1.3
+            }
+            if (horario < 13){
+                ValorCorrida = ValorCorrida * 1.2
+            }
+            if (horario < 7){
+                ValorCorrida = ValorCorrida * 1.1
+            }
+            div_aviso.innerHTML = `
+                Olá <b>${NomePassageiro}</b> Sua corrida, será na bandeira ${Bandeira}, percorrerá ${Distância} km e o total da corrida será de ${ValorCorrida}
+            `
+        }
+        
+        if (Bandeira == 3){
+            if (horario >= 13){
+                ValorCorrida = ValorCorrida * 1.45
+            }
+            if (horario < 13){
+                ValorCorrida = ValorCorrida * 1.3
+            }
+            if (horario < 7){
+                ValorCorrida = ValorCorrida * 1.15
+            }
+            div_aviso.innerHTML = `
+                Olá <b>${NomePassageiro}</b> Sua corrida, será na bandeira ${Bandeira}, percorrerá ${Distância} km e o total da corrida será de ${ValorCorrida}
+            `
+        }*/
+    }
+    
+</script>

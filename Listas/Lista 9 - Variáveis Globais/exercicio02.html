@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    salario
+    <input type="number" id="input_salario"><br>
+    <button onclick="Confirmar()">
+        Confirmar salario
+    </button>
+    <div id="div_grana_atual">
+
+    </div><br>
+    <button onclick="Pagar100()">
+        Pagar conta de 100
+    </button><br>
+    <button onclick="Pagar500()">
+        Pagar conta de 500
+    </button><br>
+    <button onclick="Ganhar()">
+        Ganhar 2000 na loteria
+    </button>
+
+
+</body>
+</html>
+
+<script>
+    var salario = 0
+
+    function Confirmar(){
+        salario = Number(input_salario.value)
+        div_grana_atual.innerHTML =`
+        Grana atual: R$${salario}
+        `
+    }
+    function Pagar100(){
+        salario -= 100
+        
+        div_grana_atual.innerHTML =`
+        Grana atual: R$${salario}
+        `
+    }
+    function Pagar500(){
+        salario -= 500
+
+        div_grana_atual.innerHTML =`
+        Grana atual: R$${salario}
+        `
+    }
+    function Ganhar(){
+        salario += 2000
+
+        div_grana_atual.innerHTML =`
+        Grana atual: R$${salario}
+        ` 
+    }
+</script>

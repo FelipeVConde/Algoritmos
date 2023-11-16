@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 7</title>
+</head>
+<body>
+    Valor da passagem
+    <input type="text" id="input_valor"><br>
+    Quantas viagens por mês
+    <input type="text" id="input_viagens"><br>
+    <button onclick="economia()">
+        Ver economia
+    </button>
+</body>
+</html>
+
+<script>
+    function economia(){
+        alert(`Você economizará R$${input_valor.value * input_viagens.value / 2} por mês`)
+    }
+</script>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depositos fez ao banco?
+    <input type="number" id="input_deposito"><br>
+    Valor de cada deposito
+    <input type="number" id="input_valor"><br>
+    <button onclick="Acompanhamento()">
+        Acompanhar grana
+    </button>
+
+    <div id="div_grana">
+        <img style="width: 50px; height: 50px;" src="" alt="">
+    </div>
+</body>
+</html>
+
+<script>
+    function Acompanhamento(){
+        var deposito = Number(input_deposito.value)
+        var valor = Number(input_valor.value)
+        var bonus = 1.01
+
+        var repeticao = 1
+        
+        var acumulado = 0
+        div_grana.innerHTML =""
+
+        while(repeticao <= deposito){
+            
+            if(repeticao % 3 != 0){
+                acumulado += valor
+                }else{
+                acumulado = (acumulado + valor) * bonus
+                div_grana.innerHTML += `
+                <img src="vetor-plano-estrela-basico_78370-1483.avif" alt="estrela" style="width: 15px; height: 15px;">
+                `
+            }
+            div_grana.innerHTML += `
+            ${repeticao}º Mês: R$${acumulado}<br>
+            `
+            
+            repeticao += 1
+        }
+        div_grana.innerHTML += `
+        Total guardado: R$${acumulado}
+        `
+    }
+</script>

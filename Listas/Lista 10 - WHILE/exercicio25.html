@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um número entre 0 e 100:
+    <input type="number" id="input_numero"><br>
+    <button onclick="Divisores()">
+        Ver Divisores
+    </button>
+    <div id="div_divisores">
+
+    </div>
+    <div id="div_primos">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Divisores(){
+        var numero = Number(input_numero.value)
+
+        var divisores = 0
+        div_divisores.innerHTML =``
+        div_primos.innerHTML =""
+
+        
+        while(divisores <= numero){
+            divisores += 1
+            
+            if(numero % divisores == 0){
+                div_divisores.innerHTML +=`
+                ${divisores}<br>
+                `
+            }
+        }
+
+        var repeticao = 2
+        var verificar 
+
+        while(repeticao < numero){
+            if(numero % numero == 0 && numero % 1 == 0 && numero % repeticao == 0){ 
+                divi_primos.innerHTML = ""
+            }else{
+                verificar = true
+                }
+            repeticao += 1
+        }     
+        if(verificar == true){
+            div_primos.innerHTML +=`
+            O número ${numero} é um número primo <br>
+            `
+        }   
+    }
+</script>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de chocolate comprados
+    <input type="number" id="input_qtdChocolate"><br>
+    <button onclick="valorCompra()">
+        Compra
+    </button>
+    <div id="div_valor">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function valorCompra(){
+        var qtdChoco = input_qtdChocolate.value
+
+        if (qtdChoco < 12){
+            ValorCompra = qtdChoco * 3
+            div_valor.innerHTML =`
+            o valor da sua compra foi de ${ValorCompra}
+            `
+        }
+        else {
+            ValorCompra = qtdChoco * 2.5
+            div_valor.innerHTML =`
+            o valor da sua compra foi de ${ValorCompra}
+            `
+        }
+    }
+</script>

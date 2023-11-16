@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <img id="bart" src="https://i.pinimg.com/originals/4b/1a/d0/4b1ad04caf5529fd784e777e4600da6a.jpg" alt="bart simpson num skate"><br>
+    Quantidade de pixels
+    <input type="number" id="input_qtdPixels"><br>
+    <button onclick="Esquerda()">
+        Mover para esquerda
+    </button>
+    <button onclick="Direita()">
+        Mover para direita
+    </button>
+</body>
+</html>
+
+<script>
+    var valor = 0
+    var qtdpixel = 0
+    
+    function Esquerda(){
+        qtdpixel = input_qtdPixels.value
+        valor -= qtdpixel
+        bart.style.marginLeft = valor + "px"
+        
+    }
+    function Direita(){
+        qtdpixel = input_qtdPixels.value
+        valor += qtdpixel
+        bart.style.marginLeft = valor + "px"
+    }
+</script>

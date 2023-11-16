@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Sortear()">
+        Sortear momento do dia
+    </button>
+    <div id="div_cumprimentar">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Sortear(){
+        var hora = parseInt(Math.random() * 24)
+        if(hora >= 0 && hora <=11){
+            div_cumprimentar.innerHTML = `
+            Bom dia, flor do dia, são ${hora}h!
+            `
+        }else if(hora <= 17){
+            div_cumprimentar.innerHTML =`
+            Boa tarde, já vai tarde! São ${hora}h!
+            `
+        }else if(hora <=23){
+            div_cumprimentar.innerHTML =`
+            Boa noite, durma bem! São ${hora}h!
+            `
+        }
+    }
+</script>

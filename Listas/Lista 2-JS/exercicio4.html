@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+<body>
+    <h3>
+        Informe os dados da residência onde mora
+    </h3><br>
+    Rua/Avenida/vila
+    <input type="text" id="input_rua"><br>
+    número
+    <input type="text" id="input_número"><br>
+    <button onclick="localidade()">
+    Onde eu moro
+    </button><br>
+
+    <div id="div_localidade">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function localidade(){
+        div_localidade.innerHTML = `
+        Seu logradouro é ${input_rua.value}<br>
+        O número do seu logradouro é ${input_número.value}<br>
+        `
+    }
+</script>

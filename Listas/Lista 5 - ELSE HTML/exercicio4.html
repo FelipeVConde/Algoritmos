@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    frequencia do aluno
+    <input type="text" id="input_frequencia"><br>
+    <button onclick="analisar()">
+        Analisar frequencia
+    </button>
+    <div id="div_analisado">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    function analisar(){
+        var frequencia = input_frequencia.value
+
+        if(frequencia >= 50){
+            div_analisado.innerHTML =`
+            <img src="https://zinengtang.github.io/images/zineng.jpg" alt="aluno estudioso">
+            `
+        }
+        else{
+            div_analisado.innerHTML =`
+            <img src="https://pbs.twimg.com/media/FYj_cO0X0AImmhM.jpg" alt="aluno turista">
+            `
+        }
+    }
+</script>

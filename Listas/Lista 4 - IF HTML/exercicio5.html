@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de Kwh consumida por mês:
+    <input type="text" id="input_Kwh"><br>
+    <button onclick="calcularConta()">
+        Calcular conta de luz
+    </button><br>
+    <span id="span_resultado"></span>
+</body>
+</html>
+<script>
+    function calcularConta(){
+        var KwhMes = Number(input_Kwh.value);
+        var valorConta = KwhMes * 0.85;
+
+        if (KwhMes < 100){
+            valorConta = valorConta * 0.9
+        }
+        alert(`O valor da conta a ser paga é R$${valorConta}`)
+    }
+</script>

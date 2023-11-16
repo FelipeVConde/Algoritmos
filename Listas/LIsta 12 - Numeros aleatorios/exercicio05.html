@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Jogar()">
+        Jogar
+    </button>
+    <div id="div_jogada">
+       
+    </div>
+</body>
+</html>
+
+<script>
+    var JoKenPo = ["imgs/exercicio05/Papel.jpg", "imgs/exercicio05/Pedra.jpg", "imgs/exercicio05/Tesoura.jpg"]
+    function Jogar(){
+        var jogada = JoKenPo[parseInt(Math.random() * JoKenPo.length)]
+        div_jogada.innerHTML = `<img src="${jogada}"  height="200px">`
+    }
+</script>

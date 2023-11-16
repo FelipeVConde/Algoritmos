@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Temperatura do ambiente
+    <input type="number" id="input_temperatura"><br>
+    <button onclick="vereficar()">
+        Verificar clima
+    </button>
+    <div id="div_verificação">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function vereficar(){
+        var temperatura = input_temperatura.value
+
+        if (temperatura >= 10){
+            div_verificação.innerHTML =`
+            Inapropriada p/ conservar alimento<br>
+            <img src="https://img.freepik.com/fotos-premium/repolho-maduro-estragado-por-insetos-agricultura-domestica_426900-915.jpg" alt="repolho estragado">
+            `
+        }
+        else {
+            div_verificação.innerHTML =`
+            Apropriada p/ conservar alimento<br>
+            <img src="https://www.isla.com.br/imgdata/produto/p_237.jpg" alt="repolho delicioso">
+            `
+        }
+    }
+</script>

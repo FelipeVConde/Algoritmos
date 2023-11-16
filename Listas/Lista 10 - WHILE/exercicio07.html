@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    diga um número entre 20 e 100
+    <input type="number" id="input_numero"><br>
+    <button onclick="Multiplos()">
+        Adoro múltiplos de 5
+    </button>
+    <div id="div_multiplos_5">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Multiplos(){
+        var numero = Number(input_numero.value)
+        var repetição = 0
+
+        if(numero >= 20 && numero <= 100){
+          div_multiplos_5.innerHTML =""
+
+            while(repetição <= numero){
+            div_multiplos_5.innerHTML +=`<br>
+            ${repetição}
+            `
+            repetição += 5
+            }  
+        }else{
+            div_multiplos_5.innerHTML = "número informado não valido"
+        }
+        
+    }
+</script>

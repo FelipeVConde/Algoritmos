@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe um numero entre 10 e 500:
+    <input type="number" id="input_numero"><br>
+    <button onclick="SomarPares()">
+        Somar pares
+    </button>
+
+    <div id="div_pares">
+
+    </div>
+    <div id="div_somaPares">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function SomarPares(){
+        var numero = Number(input_numero.value)
+        var pares = 2
+        var soma = 0
+        div_pares.innerHTML =""
+
+        if(numero < 10 || numero > 500){
+            alert("erro")
+        }
+
+        while(pares <= numero){
+            div_pares.innerHTML += `
+            ${pares}<br>
+            `
+            soma += pares
+            pares +=2
+        }
+
+        div_somaPares.innerHTML =`
+        Soma dos pares: ${soma}
+        `
+        
+        
+    }
+</script>

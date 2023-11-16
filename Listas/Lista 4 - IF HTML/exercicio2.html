@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de latinhas de refrigerante ingeridas por dia
+    <input type="text" id="input_latinhas"><br>
+    <button onclick="calcular()">
+        Quantos refris?
+    </button>
+    <div id="div_consumo">
+    </div>
+    <div id="div_alerta">
+    </div>
+</body>
+</html>
+
+<script>
+    function calcular(){
+        var latas = input_latinhas.value
+        var consumo = latas * 365
+        if (consumo >= 500){
+            div_alerta.innerHTML = 
+            "Cuidado com a diabetes!"
+        }
+        div_consumo.innerHTML = `
+        Consome ${consumo} latas por ano
+        `
+        
+    }
+</script>

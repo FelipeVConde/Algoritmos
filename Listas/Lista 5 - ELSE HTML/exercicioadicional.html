@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Nome do usuario
+    <input type="text" id="input_usuario"><br>
+    <p>Possiveis Reinos: <br>
+        •	Doce
+        •	Fogo
+        •	Gelado
+        •	Geleca
+        •	Caroço
+        •	Vampiros
+        </p>
+    
+    Último reino aventurado    
+    <input type="" id="input_reino"><br>
+    
+    Idade do usuario
+    <input type="number" max="1000" min="0" id="input_idade"><br>
+    Quantidade de inimigos derrotados
+    <input type="number" id="input_qtdinimigos" min="0"><br>
+    Quantidade de ouro
+    <input type="number" min="0" id="input_qtdouro"><br>
+
+    <button onclick="VerificarReino()">
+        Iniciar Exploração
+    </button>
+
+    <div id="div_proximoReino">
+
+    </div>
+    <span id="span_proxReino">
+
+    </span>
+    <p id="paragrafro_proxReino">
+
+    </p>
+
+</body>
+</html>
+
+<script>
+    function VerificarReino(){
+        var reino = input_reino.value
+        var ouro = Number(input_qtdouro.value)
+        var idade = input_idade.value
+        var nome = input_usuario.value
+        var eliminados = input_qtdinimigos.value
+
+        if(reino == "Doce"){
+            if(ouro > 80){
+                if(idade >= 10){
+                    div_proximoReino.innerHTML =`
+                    Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de fogo o seu dinheiro ganhará um acréscimo de 8% em moedas de ouro que será ${ouro * 0.08} moedas, sendo assim o valor total do seu dinheiro agora será de ${ouro * 1.08} moedas 
+                    `
+                    alert(`Tome cuidado para não se apaixonar pela princesa de fogo!`)
+                }else{
+                    alert(`Você não pode ir para o reino ${reino} pois você está Muito Novo`)
+                }
+            }else{
+                alert(`Você não pode ir para o reino ${reino} pois você está Muito Pobre`)
+            }
+        }
+        if(reino == "Fogo"){
+            reino = "Gelado"
+            if(ouro >= 500){
+                if(idade < 14){
+                    span_proxReino.innerHTML =`
+                    Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de gelo o seu dinheiro sofrerá uma perda de 13% em moedas de ouro que será ${ouro * 0.13} moedas, sendo assim o valor total do seu dinheiro agora será de ${ouro * 0.87} moedas
+                    `
+                    alert(`Dê um olá ao Gunter por ele ser um pinguim maneiro`)
+                }else{
+                    alert(`Você não pode ir para o reino ${reino} pois você está Muito Velho`)
+                }
+            }else{
+                alert(`Você não pode ir para o reino ${reino} pois você está Muito Pobre`)
+            }
+        }
+        if(reino == "Gelado"){
+            reino = "Geleca"
+            if(ouro > 3000){
+                if(ouro < 5000){
+                    if(idade >= 15){
+                        if(idade <= 17){
+                            if(eliminados > 60){
+                                paragrafo_proxReino.innerHTML =`
+                                Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de geleca o seu dinheiro sofrerá uma perda de 31% em moedas de ouro que será ${ouro * 0.31} moedas, porém haverá um acréscimo de 2000 moedas de ouro, sendo assim o valor total do seu dinheiro agora será de ${(ouro * 0.69) + 2000 } moedas
+                                `
+                                alert("Tome cuidado com as amoebas que surgirem pelo caminho")
+                            }else{
+                                alert(`Você não pode ir para o reino ${reino} pois você está Muito Fraco`)
+                            }
+                        }else{
+                            alert(`Você não pode ir para o reino ${reino} pois você está Muito Velho`)
+                        }
+                    }else(
+                        alert(`Você não pode ir para o reino ${reino} pois você está Muito Novo`)
+                    )
+                }else{
+                    alert(`Você não pode ir para o reino ${reino} pois você está Muito Rico`)
+                }
+            }else{
+                alert(`Você não pode ir para o reino ${reino} pois você está Muito Pobre`)
+            }
+        }
+        if(reino == "Geleca"){
+            reino = "Caroço"
+            if(ouro >= 5001){
+                if(ouro <= 8999){
+                    if(idade >= 19){
+                        if(idade <= 32){
+                            if(eliminados >=100){
+                                if(eliminados <= 150){
+                                    div_proximoReino.innerHTML =`<i>
+                                        Olá ${nome}, que bom te ver por aqui. Ao entrar no reino de caroço o seu dinheiro ganhará um acréscimo de 28.6% em moedas de ouro que será ${ouro * 0.286} moedas, sendo assim o valor total do seu dinheiro agora será de ${ouro * 1.286} moedas
+                                    </i>`
+                                    alert("Mande um abraço para a princesa caroço")
+                                }else{
+                                    alert(`Você não pode ir para o reino ${reino} pois você está Muito Forte`)
+                                }
+                            }else{
+                                alert(`Você não pode ir para o reino ${reino} pois você está Muito Fraco`)
+                            }
+                        }else{
+                            alert(`Você não pode ir para o reino ${reino} pois você está Muito Velho`)
+                        }
+                    }else{
+                        alert(`Você não pode ir para o reino ${reino} pois você está Muito Novo`)
+                    }
+                }else{
+                    alert(`Você não pode ir para o reino ${reino} pois você está Muito rico`)
+                }
+            }else{
+                alert(`Você não pode ir para o reino ${reino} pois você está Muito pobre`)
+            }
+        }
+        if(reino == "Caroço"){
+            reino = "Vampiros"
+            if(ouro > 9000){
+                if(eliminados >= 200){
+                    if(idade >= 754){
+                        if(idade <= 1000){
+                            div_proximoReino.innerHTML =`<b>
+                                Olá ${nome}, que bom te ver por aqui. Ao entrar no reino dos vampiros o seu dinheiro ganhará um acréscimo de 62.98% em moedas de ouro e perderá desse total 87.12% em moedas de ouro que será o equivalente a ${(ouro * 0.6298) * 0.8712} moedas, sendo assim o valor total do seu dinheiro agora será de ${ouro + ((ouro * 0.6298) * 0.8712)} moedas
+                            </b>`
+                            alert("A cor vermelha vai salvar a sua vida nesse lugar")
+                        }else{
+                            alert(`Você não pode ir para o reino ${reino} pois você está Muito Velho`)
+                        }
+                    }else{
+                        alert(`Você não pode ir para o reino ${reino} pois você está Muito Novo`)
+                    }
+                }else{
+                    alert(`Você não pode ir para o reino ${reino} pois você está Você está Muito Fraco`)
+                }
+            }else{
+                alert(`Você não pode ir para o reino ${reino} pois você está Muito Pobre`)
+            }
+        }
+        if(reino == "Vampiros"){
+            alert("Parabéns, você concluiu com maestria todos os reinos")
+        }
+    }
+</script>

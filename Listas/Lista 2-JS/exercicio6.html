@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 6</title>
+</head>
+<body>
+    Valor da pizza
+    <input type="text" id="input_valor"><br>
+    Quantidade de amigos
+    <input type="text" id="input_amigos"><br>
+    <button onclick="horadapizza()">
+        #lovePizza
+    </button>
+</body>
+</html>
+
+<script>
+    function horadapizza(){
+        alert(`Cada um dos ${input_amigos.value} amigos vai pagar R$${input_valor.value / input_amigos.value}`)
+    }
+</script>

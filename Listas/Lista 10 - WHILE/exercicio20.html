@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantos depositos fez ao banco?
+    <input type="number" id="input_deposito"><br>
+    Valor de cada deposito
+    <input type="number" id="input_valor"><br>
+    <button onclick="Acompanhamento()">
+        Acompanhar grana
+    </button>
+
+    <div id="div_grana">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Acompanhamento(){
+        var deposito = Number(input_deposito.value)
+        var valor = Number(input_valor.value)
+
+        var repeticao = 1
+        div_grana.innerHTML =""
+
+        while(repeticao <= deposito){
+            div_grana.innerHTML += `
+            ${repeticao}º Mês: R$${valor * repeticao}<br>
+            `
+            repeticao += 1
+        }
+    }
+</script>

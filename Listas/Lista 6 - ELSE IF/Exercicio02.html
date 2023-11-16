@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Informe Renda Familiar mensal
+    <input type="text" id="inputRenda"><br>
+    <button onclick="Analisar()">
+        Analisar Renda
+    </button>
+    <div id="divClasse">
+        
+    </div>
+
+</body>
+</html>
+
+<script>
+    function Analisar(){
+        var renda = inputRenda.value;
+
+        // if (renda <= 250){
+        //     divClasse.innerHTML = "Classe E"
+        // }else if(renda > 250){
+        //     if(renda <= 900){
+        //         divClasse.innerHTML = "Classe D"
+        //     }else if(renda > 900){
+        //         if(renda <= 2500){
+        //             divClasse.innerHTML = "Classe C"
+        //         }else if(renda > 2500){
+        //             if(renda <= 9500){
+        //                 divClasse.innerHTML = "Classe B"
+        //             }else if(renda > 9000){
+        //                 divClasse.innerHTML = "Classe A"
+        //             }
+        //         }
+        //     }
+        // }
+        if(renda <= 250){
+            divClasse.innerHTML = "Classe E"
+        }else if(renda <= 900){
+            divClasse.innerHTML = "Classe D"
+        }else if(renda <= 2500){
+            divClasse.innerHTML = "Classe C"
+        }else if(renda <= 9500){
+            divClasse.innerHTML = "Classe B"
+        }else{divClasse.innerHTML = "Classe A"}
+    }
+</script>

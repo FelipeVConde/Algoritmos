@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Registro de Viagens de um astronauta</h1>
+    Informe nome do astronauta
+    <input type="text" id="input_nome_astronauta"><br>
+    Quantidade de dias
+    <input type="text" id="input_qtd_dias"><br>
+    Quantidade de horas
+    <input type="text" id="input_qtd_horas"><br>
+    Quantidade de minutos
+    <input type="text" id="input_qtd_minutos"><br>
+    <button onclick="Registrar()">
+        Registrar viagem
+    </button>
+    <button onclick="Relatar()">
+        Relatorio de viagem
+    </button>
+    <div id="div_relatorio">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    var ListaNome = []
+    var ListaQtdDias = []
+    var ListaQtdHoras = []
+    var ListaQtdMinutos = []
+    var ListaIMG = ["Criança.png", "Jovem.png", "Adulto.png", "Velho.png", "Morto.png"]
+
+    function Registrar(){
+        var nome = input_nome_astronauta.value
+        var diaqtd = input_qtd_dias.value
+        var horaqtd = input_qtd_horas.value
+        var minutoqtd = input_qtd_minutos.value
+
+        if(diaqtd < 0 || horaqtd < 0 || minutoqtd < 0){
+            alert("Informe um tempo de viagem válido!")
+        }else{
+            ListaNome.push(nome)
+            ListaQtdDias.push(diaqtd)
+            ListaQtdHoras.push(horaqtd)
+            ListaQtdMinutos.push(minutoqtd)
+        }
+    }
+    function Relatar(){
+        div_relatorio.innerHTML =""
+        for(posicao = 0; posicao < ListaNome.length; posicao += 1){
+
+            var Totalminutos = (Number(ListaQtdDias[posicao]) * 1440) + (Number(ListaQtdHoras[posicao]) * 60) + Number(ListaQtdMinutos[posicao])
+
+            var TempoNaTerra = Totalminutos * 49
+            var anosNaTerra = TempoNaTerra / 525600
+            var bart = ""
+
+            if(anosNaTerra <= 13){
+                bart = ListaIMG[0]
+            }else if(anosNaTerra <= 30){
+                bart = ListaIMG[1]
+            }else if(anosNaTerra <= 65){
+                bart = ListaIMG[2]
+            }else if(anosNaTerra <= 100){
+                bart = ListaIMG[3]
+            }else{
+                bart = ListaIMG[4]
+            }
+            
+            div_relatorio.innerHTML +=`
+                Viagem <b>${posicao + 1}</b>:<br>
+                Astronauta <b>${ListaNome[posicao]}</b> ficou fora por pelo menos <b>${anosNaTerra}</b> anos no tempo da Terra.<br>
+                A criança que nasceu quando ele saiu provavelmente está assim:<br>
+                <img src="${bart}" alt="bart"><br>
+                `
+        }
+        
+    }
+</script>

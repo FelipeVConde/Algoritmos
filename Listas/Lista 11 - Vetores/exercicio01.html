@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite o nome da fruta:
+    <input type="text" id="input_fruta"><br>
+    <button onclick="Buscar()">
+        Pesquisar
+    </button>
+    <div id="div_pesquisa">
+
+    </div>
+</body>
+</html>
+
+<script>
+    var ListaFruta = ["maçã", "banana", "abacaxi", "melão", "limão"];
+
+    function Buscar(){
+        var fruta = input_fruta.value
+        div_pesquisa.innerHTML =`Não existe a fruta ${fruta} na lista`
+        for(var repeticao = 0; repeticao <= ListaFruta.length; repeticao += 1){
+            if(fruta == ListaFruta[repeticao]){
+                div_pesquisa.innerHTML =`A fruta ${fruta} existe na lista.`
+                break;
+            }
+        }
+    }
+</script>

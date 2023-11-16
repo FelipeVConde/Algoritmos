@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Minhavisão()">
+        Diga algo sobre a matéria de Algoritmos
+    </button>
+    <div id="algoritmo">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Minhavisão(){
+        var repetição = 1
+        var numero = 1
+        algoritmo.innerHTML =""
+        while(repetição <= 7){
+            algoritmo.innerHTML +=`<br> 
+            ${numero}. Minha matéria favorita, ela me desestressa e me conforta
+            `
+            repetição += 1
+            numero += 1
+        }
+    }
+</script>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Incrementar()">
+        Clique em mim
+    </button>
+    <div >
+        Cliques:<span id="span_cliques"></span>
+    </div>
+</body>
+</html>
+<script>
+    var cliques = 0;
+    function Incrementar(){
+        
+        cliques += 1
+        
+        span_cliques.innerHTML = `
+        ${cliques}
+        `
+        
+    }
+</script>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="JogarDado()">
+        Jogar Dado
+    </button>
+    <div id="div_numero">
+
+    </div>
+    <div id="div_lado_dado" style="border-radius: 4px; border: solid; height: 100px; width: 100px; display: flex; align-items: center;">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function JogarDado(){
+        var dado = parseInt(Math.random() * 20 + 1)
+        div_lado_dado.innerHTML = `<h2>${dado}</h2>`
+    }
+</script>

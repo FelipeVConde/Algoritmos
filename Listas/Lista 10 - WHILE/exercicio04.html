@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Pares()">
+        S2 Pares
+    </button>
+    <div id="divpares">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Pares(){
+        var repetição = 0
+        divpares.innerHTML =""
+        while(repetição <= 100){
+            divpares.innerHTML +=`<br>
+            ${repetição}
+            `
+            repetição += 2
+        }
+    }
+</script>

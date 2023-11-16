@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Código do produto:
+    <input type="text" id="codigo_input"><br>
+    Nome do produto:
+    <input type="text" id="nome_input"><br>
+    Quantidade em estoque:
+    <input type="number" id="qtdEmEstoque_input"><br>
+    <button onclick="SalvarProduto()">
+        Salvar Produto
+    </button>
+    <button onclick="MostrarEstoque()">
+        Ver estoque
+    </button>
+    <div id="div_relatorio">
+
+    </div>
+</body>
+
+</html>
+<script>
+    ListaCodigo = []
+    ListaProduto = []
+    ListaQtdEstoque = []
+    ListaPreco = []
+
+    function SalvarProduto() {
+        var codigo = codigo_input.value
+        var produto = nome_input.value
+        var estoque = Number(qtdEmEstoque_input.value)
+        var preco = (Math.random() * 999 + 1).toFixed(2);
+
+        if (codigo.trim() == "") {
+            alert("Código inválido para o produto")
+        } else if (produto.trim() == "") {
+            alert('Nome inválido para o produto')
+        } else if (estoque <= 0) {
+            alert("Quantidade inválida para o produto")
+        } else {
+            ListaCodigo.push(codigo)
+            ListaProduto.push(produto)
+            ListaQtdEstoque.push(estoque)
+            ListaPreco.push(preco)
+
+            for (repeticao = 0; repeticao < ListaProduto.length; repeticao += 1) {
+                if (produto == ListaProduto[repeticao - 1]) {
+                    ListaProduto.splice(repeticao - 1, 1)
+                    ListaCodigo.splice(repeticao - 1, 1)
+                    ListaPreco.splice(repeticao -1, 1)
+
+
+                    ListaQtdEstoque[repeticao - 1] = ListaQtdEstoque[repeticao - 1] + ListaQtdEstoque[ListaQtdEstoque.length - 1]
+                    ListaQtdEstoque.splice(repeticao, 1)
+
+                    alert(`O produto de código ${ListaCodigo[repeticao - 1]} teve sua quantidade aumentada`)
+                    break;
+                } else if (produto == ListaProduto[repeticao]) {
+                    alert("Produto cadastrado com sucesso")
+                }
+            }
+        }
+    }
+
+    function MostrarEstoque() {
+        div_relatorio.innerHTML = ""
+
+        for (posicao = 0; posicao < ListaProduto.length; posicao += 1) {
+            div_relatorio.innerHTML += `
+            Código: ${ListaCodigo[posicao]}<br>
+            Nome: ${ListaProduto[posicao]}<br>
+            Quantidade: ${ListaQtdEstoque[posicao]}<br>
+            Preço: R$${ListaPreco[posicao]}<br><br>
+            `
+        }
+        
+    }
+</script>

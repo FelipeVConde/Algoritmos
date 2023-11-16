@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Digite um Número entre 0 e 200
+    <input type="number" id="input_numero"><br>
+    <button onclick="Multiplos()">
+        Viva o 7!
+    </button>
+    <div id="div_multiplos_7">
+
+    </div>
+</body>
+</html>
+
+<script>
+    function Multiplos(){
+        var numero = Number(input_numero.value)
+        var repetição = 0
+        if(numero >= 0 && numero <= 200){
+            div_multiplos_7.innerHTML = ""
+            while(repetição <= numero){
+            div_multiplos_7.innerHTML +=`<br>
+            ${repetição}
+            `
+            repetição += 7
+            }
+        }else{
+            div_multiplos_7.innerHTML ="número informado invalido"
+        }
+        
+    }
+</script>
+

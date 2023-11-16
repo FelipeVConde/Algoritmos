@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="Sortear()">
+        Sortear time
+    </button>
+    <div id="div_escudo_time">
+        
+    </div>
+</body>
+</html>
+
+<script>
+    var ListaEscudos = ["imgs/exercicio02/EscudoCorinthians.png", "imgs/exercicio02/EscudoFlamengo.png", "imgs/exercicio02/EscudoPalmeiras.png", "imgs/exercicio02/EscudoSantos.png"]
+    function Sortear(){
+        var escudo = ListaEscudos[parseInt(Math.random() * ListaEscudos.length)]
+        div_escudo_time.innerHTML =`<img src="${escudo}" height="150px">`
+    }
+</script>

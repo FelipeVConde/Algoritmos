@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Quiosque Mirosmar - Controle de Vendas</h1>
+    <h2>--------Abertura do Quiosque--------</h2>
+
+    Entre com a quantidade de água engarrafada no estoque:
+    <input type="number" id="input_qtdagua"><br>
+    Entre com a quantidade de coco fechado no estoque:
+    <input type="number" id="input_qtdcoco"><br>
+
+    <button onclick="Verificar()">
+        Abrir quiosque
+    </button><br>
+    <h2>--------Estoque Inicial--------</h2>
+    <div id="div_estoque">
+        Água engarrafada:<br>
+        Coco fechado:
+    </div>
+    <h2>--------Registro das Operações de Venda--------</h2>
+    Entre com a quantidade de vendida:
+    <input id="input_qtdvenda">
+    Informe o produto vendido
+    <input type="search">
+    <button>Registrar a Venda</button>
+    <button style="background-color: red;">Encerrar o turno</button>
+    <div id="div_verificacao">
+
+    </div>
+    
+
+
+</body>
+</html>
+
+<script>
+    function Verificar(){
+        var qtdagua = Number(input_qtdagua.value)
+        var qtdcoco = Number(input_qtdcoco.value)
+        var qtdvenda = Number(input_qtdvenda.value)
+        var estoqueagua = 0
+        var estoquecoco = 0
+        div_verificacao.innerHTML =""
+        div_estoque.innerHTML =""
+
+        if(qtdagua < 100 && qtdcoco < 200){
+            div_verificacao.innerHTML +="Com essa quantidade de Água engarrafada e coco não dá para abrir o quiosque"
+        }if(qtdagua < 100){
+            div_verificacao.innerHTML +=`
+            Com essa quantidade de Água engarrafada não dá para abrir o quiosque
+            `
+        }else if(qtdagua >= 100 && qtdagua <= 1000){
+            div_verificacao.innerHTML += 'Engarrafe mais água de coco'
+            estoqueagua = qtdagua
+        }if(qtdcoco < 200){
+            div_verificacao.innerHTML +=`
+            Com essa quantidade de Coco fechado não dá para abrir o quiosque
+            `
+        }else if(qtdcoco >= 200 && qtdcoco <= 2000){
+            div_verificacao.innerHTML += ' Compre mais cocos'
+            estoquecoco = qtdcoco 
+        }
+
+        div_estoque.innerHTML +=`
+        Água engarrafada: <b>${estoqueagua}</b><br>
+        Coco fechado: <b>${estoquecoco}</b><br>
+
+        `
+        
+
+
+    }
+</script>

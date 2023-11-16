@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 2</title>
+</head>
+<body>
+    quantidade de votos para o Candidato A
+    <input type="text" id="input_candA"><br>
+    quantidade de votos para o Candidato B
+    <input type="text" id="input_candB"><br>
+    quantidade de votos brancos
+    <input type="text" id="input_branco"><br>
+    quantidade de votos nulos
+    <input type="text" id="input_nulo"><br>
+    <button onclick="Resultado()">
+        Resultado da Eleição
+    </button><br>
+    <div id="div_resultado">
+
+    </div>
+
+</body>
+</html>
+
+<script>
+    function Resultado() {
+        var candA = Number(input_candA.value)
+        var candB = Number(input_candB.value)
+        var branco = Number(input_branco.value)
+        var nulo = Number(input_nulo.value)
+        var total = candA + candB + branco + nulo
+    div_resultado.innerHTML = `
+        Total de votos: <u>${total}</U><br>
+        Candidato A: ${candA / total * 100}% (${candA} votos)<br>
+        Candidato B: ${candB / total * 100}% (${candB} votos)<br>
+        Inválidos: ${(branco + nulo) / total * 100}% (${nulo + branco} votos)<br>
+    `
+    }
+</script>
