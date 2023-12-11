@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="ExibirInformações()">
+        cadastrar
+    </button>
+</body>
+</html>
+
+<script>
+    function ExibirInformações(){
+        var dataAtual = new Date()
+        anoAtual = dataAtual.getFullYear()
+        var pessoa = {
+        nome: "Conde",
+        sobrenome: "Villa",
+        anoNascimento: Number(2004),
+        altura: Number(1.95),
+        endereço: {
+            logradouro: "Campo Belo",
+            numero: 447,
+        },
+    } 
+    // - pessoa.anoNascimento
+    console.log(`Olá ${pessoa.nome} ${pessoa.sobrenome}! Você tem ${pessoa.altura} metros e ${anoAtual - pessoa.anoNascimento} anos. Seu endereço é: ${pessoa.endereço.logradouro}, ${pessoa.endereço.numero}.`)
+    }
+</script>
